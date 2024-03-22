@@ -55,8 +55,7 @@
 	    <td>${userVo.email}</td>	     
 	    <td>${userVo.upoint}</td>	     
 	    <td>${userVo.indate}</td>	     
-	    <td><a href = "/Menus/Delete?menu_id=${menu.menu_id}">삭제</a></td>	     
-	    <td><a href = "/Menus/UpdateForm?menu_id=${menu.menu_id}">수정</a></td>	     
+     
       </tr>
       </c:forEach>
     </table>

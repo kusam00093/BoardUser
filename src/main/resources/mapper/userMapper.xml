@@ -11,16 +11,26 @@
         		    WHEN  UPOINT BETWEEN 4001 AND 6000  THEN '일반회원'
          			WHEN  UPOINT BETWEEN 2001 AND 4000  THEN '준회원'
          			WHEN  UPOINT BETWEEN 0    AND 2000  THEN '손님'
-         			END       
-       			UPOINT,
+         			END       UPOINT
+       			,
        			TO_CHAR(INDATE,'YYYY-MM-DD') INDATE
 		FROM  USERS
 		ORDER BY USERID ASC
 	</select>
 	
 	<insert id="insertUser">
-		INSERT INTO USERS(USERID,PASSWD,USERNAME,EMAIL,UPOINT)
-		VALUES(#{userid},#{password},#{username},#{email},#{upoint})
+		INSERT INTO USERS(
+		USERID,
+		PASSWD,
+		USERNAME,
+		EMAIL
+		)
+		VALUES(
+		#{ userid },
+		#{ passwd },
+		#{ username },
+		#{ email }
+		)
 	
 	
 	</insert>

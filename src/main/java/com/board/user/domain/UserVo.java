@@ -11,6 +11,6 @@ public class UserVo {
 	private String passwd;
 	private String username;
 	private String email;
-	private int    upoint;
+	private String upoint;
 	private String indate;
 }
