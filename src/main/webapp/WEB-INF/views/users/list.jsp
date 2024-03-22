@@ -34,26 +34,27 @@
 </head>
 <body>
   <main>
-    <h2>메뉴 목록</h2>
+    <h2>사용자 목록</h2>
     <table>
       <tr>
-	    <td>Menu_id</td>	     
-	    <td>Menu_name</td>	     
-	    <td>Menu_seq</td>	     
-	    <td>삭제</td>	     
-	    <td>수정</td>	     
+	    <td>아이디</td>	     
+	    <td>이름</td>	     
+	    <td>이메일</td>	     
+	    <td>회원등급</td>	     
+	    <td>가입일</td>	     
       </tr>
       <tr>
-      <td colspan = "5">
-		 [<a href = "/Menus/WriteForm">메뉴 등록</a>    ]&nbsp;&nbsp;&nbsp;  
-		 [<a href = "/Menus/WriteForm2">메뉴 등록2</a>    ] 
+      <td colspan = "5">  
+		 [<a href = "/Users/WriteForm">회원 등록</a>    ]
       </td>
       </tr>
-     <c:forEach  var="menu" items="${ menuList }">
+     <c:forEach  var="userVo" items="${ userList }">
       <tr>
-	    <td>${menu.menu_id}</td>	     
-	    <td>${menu.menu_name}</td>	     
-	    <td>${menu.menu_seq}</td>	     
+	    <td>${userVo.userid}</td>	     
+	    <td>${userVo.username}</td>	     
+	    <td>${userVo.email}</td>	     
+	    <td>${userVo.upoint}</td>	     
+	    <td>${userVo.indate}</td>	     
 	    <td><a href = "/Menus/Delete?menu_id=${menu.menu_id}">삭제</a></td>	     
 	    <td><a href = "/Menus/UpdateForm?menu_id=${menu.menu_id}">수정</a></td>	     
       </tr>

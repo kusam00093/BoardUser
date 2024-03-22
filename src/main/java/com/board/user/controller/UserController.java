@@ -1,5 +1,8 @@
 package com.board.user.controller;
 
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +33,33 @@ public class UserController {
 		return mv;
 	}
 	
+	// /Users/WriteForm
+	@RequestMapping("/WriteForm")
+	public ModelAndView writeForm() {
+		ModelAndView mv     = new ModelAndView();
+		LocalDateTime today = LocalDateTime.now();
+		String now          = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSSS"));
+		DayOfWeek wkday     = today.getDayOfWeek();
+		now                 += " " + wkday;
+		mv.addObject("now", now);
+		mv.setViewName("users/write");
+		return mv;
+	}
+
+		
+	// /Users/Write
+	@RequestMapping("/Write")
+	public ModelAndView write( UserVo userVo) {
+		// 저장
+		userMapper.insertUser( userVo );
+		
+		// 데이터를 가지고 이동한다
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Users/List");
+		return mv;
+		
+		
+	}
 
 	
 	

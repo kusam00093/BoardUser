@@ -17,5 +17,11 @@
 		FROM  USERS
 		ORDER BY USERID ASC
 	</select>
+	
+	<insert id="insertUser">
+		INSERT INTO USERS(USERID,PASSWD,)
+	
+	
+	</insert>
   
 </mapper>  	
