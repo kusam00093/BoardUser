@@ -19,7 +19,8 @@
 	</select>
 	
 	<insert id="insertUser">
-		INSERT INTO USERS(USERID,PASSWD,)
+		INSERT INTO USERS(USERID,PASSWD,USERNAME,EMAIL,UPOINT)
+		VALUES(#{userid},#{password},#{username},#{email},#{upoint})
 	
 	
 	</insert>
