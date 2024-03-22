@@ -2,6 +2,9 @@ package com.board.user.domain;
 
 import lombok.Data;
 
+
+// @Data : @Getter, @Setter, @ToString, @NoArgsConstruvtor, @EqualsAndHashCode, @RequiedArgsConstructor
+
 @Data
 public class UserVo {
 	private String userid;
