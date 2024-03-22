@@ -46,7 +46,7 @@
       <tr>
       <td colspan = "5">  
 		 [<a href = "/Users/WriteForm">회원 등록</a>    ]
-      </td>
+      </td> 
       </tr>
      <c:forEach  var="userVo" items="${ userList }">
       <tr>
