@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace = "com.board.user.mapper.UserMapper">
-	<select id="getUserList" resultType ="com.board.user.domain.UserVo">
+	<resultMap type="java.util.HashMap" id="getUserList">
+	<result property="userid" column="userid"/>
+	<result property="passwd" column="passwd"/>
+	<result property="username" column="username"/>
+	<result property="email" column="email"/>
+	<result property="upoint" column="upoint"/>
+	<result property="indate" column="indate"/>
+	
+	
+	</resultMap>
+
+
+	<select id="getUserList" resultMap ="getUserList">
 		SELECT  USERID,
        			USERNAME,
        			EMAIL,
