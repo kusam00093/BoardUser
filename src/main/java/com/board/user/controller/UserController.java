@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.board.user.domain.UserVo;
 import com.board.user.mapper.UserMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping("/Users")
 public class UserController {
@@ -60,7 +63,22 @@ public class UserController {
 		
 		
 	}
-
+	
+	// Users/View
+	@RequestMapping("/View")
+	public ModelAndView view(UserVo userVo) {
+		
+		//db 조회
+		UserVo vo = userMapper.getUser(userVo);
+		//System.out.println(vo);
+		log.info("vo :{}",vo);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("vo",vo);
+		mv.setViewName("users/view");
+		
+		return mv;
+	}
 	
 	
 }
