@@ -79,7 +79,7 @@
 	</insert>
 	
 	
-	<update id="update">
+	<update id="updateUser">
     UPDATE   USERS
     SET     
     PASSWD   = #{ passwd },
@@ -91,5 +91,11 @@
 	
 	</update>
 	
+	<delete id="deleteUser">
+	DELETE FROM USERS
+	WHERE  USERID = #{userid}
+	
+	
+	</delete>
   
 </mapper>  	

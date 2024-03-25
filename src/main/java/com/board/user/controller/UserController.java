@@ -101,10 +101,19 @@ public class UserController {
 	
 	@RequestMapping("/Update")
 	public ModelAndView Update(UserVo userVo) {
-		userMapper.update(userVo);
+		userMapper.updateUser(userVo);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:/Users/List");
 		return mv;
+	}
+	
+	@RequestMapping("/Delete")
+	public ModelAndView delete(UserVo userVo) {
+		userMapper.deleteUser(userVo);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Users/List");
+		return mv;
+		
 	}
 	
 }

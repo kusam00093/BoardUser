@@ -98,7 +98,7 @@ input[readonly]{
       	  <a class="btn btn-primary" role="button" 
       	  href="/Users/UpdateForm?userid=${vo.userid}" >회원수정</a>
       	  <a class="btn btn-primary" role="button" 
-      	  href="Users/Delete?userid=${vo.userid}" >회원삭제</a>
+      	  href="/Users/Delete?userid=${vo.userid}" >회원삭제</a>
       	  <a class="btn btn-primary" role="button" 
       	  href="/Users/List" >회원목록</a>
       	  <a class="btn btn-primary" role="button" 
