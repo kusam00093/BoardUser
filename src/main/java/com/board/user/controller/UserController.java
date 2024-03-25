@@ -3,6 +3,7 @@ package com.board.user.controller;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class UserController {
 	
 	// /Users/List
 	@RequestMapping("/List")
-	public ModelAndView list() {
+	public ModelAndView list(UserVo userVo) {
 		// 목록 조회
 		List<UserVo> userList = userMapper.getUserList();
 		ModelAndView mv = new ModelAndView();
@@ -69,16 +70,41 @@ public class UserController {
 	public ModelAndView view(UserVo userVo) {
 		
 		//db 조회
-		UserVo vo = userMapper.getUser(userVo);
+		HashMap<String, Object> map = userMapper.getUser(userVo);
 		//System.out.println(vo);
-		log.info("vo :{}",vo);
+		log.info("vo :{}",map);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("vo",vo);
+		mv.addObject("vo",map);
 		mv.setViewName("users/view");
 		
 		return mv;
 	}
 	
+	// Users/UpdateForm
+	@RequestMapping("/UpdateForm")
+	public ModelAndView updateForm(UserVo userVo) {
+		// id 로 수정할 한명의 데이터를 조회
+		HashMap<String,Object> map = userMapper.getUser(userVo);
+		
+		// model 에 담는다
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("vo",map);
+		
+		// 이동한다
+		mv.setViewName("users/update");
+		
+		return mv;
+	}
+	
+	// Users/Update
+	
+	@RequestMapping("/Update")
+	public ModelAndView Update(UserVo userVo) {
+		userMapper.update(userVo);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Users/List");
+		return mv;
+	}
 	
 }

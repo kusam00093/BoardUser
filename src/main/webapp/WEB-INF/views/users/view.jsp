@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,11 +66,26 @@ input[readonly]{
       	</tr>
       	<tr>
       	  <td>회원등급</td>
-      	  <td>${ vo.upoint }</td>
+      	  <td>${ vo.upt }</td>
       	</tr>
       	<tr>
       	  <td>포인트</td>
-      	  <td>${ vo.upoint }</td>
+      	  
+      	  <td>
+      	  <c:choose>
+      	    <c:when test="${ vo.upoint ne 0 }">
+      	    	${ vo.upoint }
+      	    </c:when>
+      	    <c:otherwise>
+      	    	<span style = "color : red">없음</span>
+      	    </c:otherwise>
+      	  </c:choose>  
+      	    
+      	 <%--  <c:if test="${ vo.upoint ne 0 }">
+      	  ${ vo['upoint'] }
+      	  </c:if> --%>
+      	  </td>
+      	  <%-- <td>${ vo['upoint'] + 1000 }</td> --%>
       	</tr>
       	<tr>
       	  <td>가입일</td>
