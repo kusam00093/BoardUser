@@ -49,7 +49,7 @@ input[readonly]{
       	  <td><input type="text" name ="userid"></td>
       	</tr>
       	<tr>
-      	  <td>비밀번호</td>
+      	  <td>비밀번호</td> 
       	  <td><input type="password" name ="passwd"></td>
       	</tr>
       	<tr>

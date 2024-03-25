@@ -28,7 +28,7 @@
          			END  -->      UPOINT
        			,
        			TO_CHAR(INDATE,'YYYY-MM-DD') INDATE
-		FROM  USERS
+		FROM  USERS 
 		ORDER BY USERID ASC
 	</select>
 	

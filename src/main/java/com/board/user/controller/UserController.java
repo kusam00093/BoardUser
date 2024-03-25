@@ -81,7 +81,7 @@ public class UserController {
 		return mv;
 	}
 	
-	// Users/UpdateForm
+	// Users/UpdateForm 
 	@RequestMapping("/UpdateForm")
 	public ModelAndView updateForm(UserVo userVo) {
 		// id 로 수정할 한명의 데이터를 조회
