@@ -41,7 +41,9 @@
 		#{ userid },
 		#{ passwd },
 		#{ username },
-		#{ email }
+		#{ email },
+		1000,
+		SYSDATE
 		)
 	
 	
